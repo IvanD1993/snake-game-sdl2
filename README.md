@@ -1,32 +1,34 @@
-# snake_engine (WSL + SDL2 minimal)
+# 🐍 snake game (C++ / SDL2 / WSL)
 
-Minimal CMake + SDL2 starter that opens a window, runs a fixed-timestep loop, and clears the screen.
+A minimal 2D snake game skeleton and prototype built with **CMake**, **SDL2**, and **SDL_ttf**.  
+Runs natively in **WSL (Ubuntu)** or Linux, with full **VS Code integration**.
 
-## Prereqs (Ubuntu 24.04 in WSL)
+---
+
+## 📦 Prerequisites (Ubuntu / WSL)
+
+Install the required build tools and libraries:
 
 ```bash
 sudo apt update
-sudo apt install -y build-essential cmake ninja-build pkg-config libsdl2-dev
-```
+sudo apt install -y cmake ninja-build g++ libsdl2-dev libsdl2-ttf-dev
 
-## Build (VS Code with CMake Tools)
+🏗️ Build & Run (VS Code + CMake Tools)
 
-- Open this folder in VS Code **from WSL** (`code .`).
-- In the **Command Palette**, run: `CMake: Select Configure Preset` → `Linux Debug (Ninja)`
-- Then run `CMake: Build`.
+In VS Code, open the Command Palette →
+CMake: Select Configure Preset → choose linux-debug
 
-Or build manually:
+Build using Ctrl + Shift + B
+or run manually:
 
-```bash
-cmake -S . -B build/debug -G Ninja -DCMAKE_BUILD_TYPE=Debug
-cmake --build build/debug
-./build/debug/snake
-```
+cmake --preset linux-debug
+cmake --build --preset debug
 
-You should see a 1280×720 window with the title "snake (SDL2)" and an FPS counter in the console.
+🧰 Features
 
-## Files
-
-- `CMakeLists.txt` – project config
-- `src/main.cpp` – entry point
-- `src/app.cpp` – SDL setup + fixed-step loop
+Fixed-timestep update loop (120 Hz logic)
+Menu / Playing / Paused states
+Buttons with SDL_ttf text labels
+Modular, small, and easy to extend
+Ready-to-run on WSL or Linux
+CMake + Ninja + VS Code integration
