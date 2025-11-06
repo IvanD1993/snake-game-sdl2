@@ -1,0 +1,19 @@
+cat <<'EOF' > .gitignore
+# Build outputs
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Editor / IDE
+.vscode/
+.vscode-server/
+.idea/
+
+# Temporary files
+*.log
+*.swp
+*.zip
+EOF
